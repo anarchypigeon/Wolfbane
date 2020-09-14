@@ -1,0 +1,20 @@
+def werewolf_lurking():
+    ww_game_state = 1
+    ww_sightings = 0
+    werewolf_spotting = 2
+    while ww_game_state < 2:
+        ww_rng = random.randint(1, 3)
+        time.sleep(3)
+        print(ww_rng)
+        # ^^^unnecessary but helps with debugging
+        if ww_rng == werewolf_spotting:
+            ww_sightings += 1
+        while ww_sightings == 1:
+            print('You hear a faint howling in the distance!')
+            break
+        while ww_sightings == 2:
+            print('You think you hear footsteps somewhere behind you! Hurry up!')
+            break
+        while ww_sightings == 3:
+            print('Oh no! The werewolf found you before you located the sword! You lose!')
+            break
